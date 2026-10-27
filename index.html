@@ -74,9 +74,6 @@ p.lead{margin:0 auto 32px; max-width:520px; color:var(--muted)}
 .btn:hover{background:var(--brand-2); transform:translateY(-2px)}
 .btn:focus-visible{outline:2px solid #c79bff; outline-offset:3px}
 .btn svg{width:18px; height:18px}
-footer{padding:24px 16px 28px; text-align:center; color:var(--muted); font-size:14px}
-footer a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--brand)}
-footer a:hover{color:#c79bff}
 @media (prefers-reduced-motion:reduce){.logo,.chip i{animation:none}}
 </style>
 </head>
@@ -87,27 +84,26 @@ footer a:hover{color:#c79bff}
     <div class="chip"><i></i><span id="host">site.zimin.dev</span></div>
     <h1 data-i18n="title">Project presentation <span>coming soon</span></h1>
     <p class="lead" data-i18n="lead">This space is reserved for a client project. The presentation will be published here shortly.</p>
-    <a class="btn" href="https://zimin.dev" data-i18n="btn">Visit Zimin.Dev
+    <a class="btn" href="https://zimin.dev">zimin.dev
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </main>
-<footer>Design &amp; Development by <a href="https://zimin.dev">Sasha Zimin</a> ❤️</footer>
 <script>
 (function(){
   var h=location.hostname; if(h&&!/^(localhost|127\.|\[)/.test(h)) document.getElementById('host').textContent=h;
   var T={
-    uk:{title:'Презентація проєкту <span>скоро</span>',lead:'Тут буде презентація проєкту для клієнта. Вона з’явиться найближчим часом.',btn:'Перейти на Zimin.Dev'},
-    de:{title:'Projektpräsentation <span>in Kürze</span>',lead:'Dieser Bereich ist für ein Kundenprojekt reserviert. Die Präsentation erscheint hier in Kürze.',btn:'Zu Zimin.Dev'},
-    pl:{title:'Prezentacja projektu <span>wkrótce</span>',lead:'To miejsce jest zarezerwowane dla projektu klienta. Prezentacja pojawi się tu wkrótce.',btn:'Przejdź do Zimin.Dev'},
-    fr:{title:'Présentation du projet <span>bientôt</span>',lead:'Cet espace est réservé à un projet client. La présentation sera publiée ici prochainement.',btn:'Visiter Zimin.Dev'},
-    ru:{title:'Презентация проекта <span>скоро</span>',lead:'Здесь будет презентация проекта для клиента. Она появится в ближайшее время.',btn:'Перейти на Zimin.Dev'}
+    uk:{title:'Презентація проєкту <span>скоро</span>',lead:'Тут буде презентація проєкту для клієнта. Вона з’явиться найближчим часом.'},
+    de:{title:'Projektpräsentation <span>in Kürze</span>',lead:'Dieser Bereich ist für ein Kundenprojekt reserviert. Die Präsentation erscheint hier in Kürze.'},
+    pl:{title:'Prezentacja projektu <span>wkrótce</span>',lead:'To miejsce jest zarezerwowane dla projektu klienta. Prezentacja pojawi się tu wkrótce.'},
+    fr:{title:'Présentation du projet <span>bientôt</span>',lead:'Cet espace est réservé à un projet client. La présentation sera publiée ici prochainement.'},
+    ru:{title:'Презентация проекта <span>скоро</span>',lead:'Здесь будет презентация проекта для клиента. Она появится в ближайшее время.'}
   };
   var l=(navigator.languages&&navigator.languages[0]||navigator.language||'en').slice(0,2).toLowerCase(), t=T[l];
   if(!t) return;
   document.documentElement.lang=l;
   document.querySelectorAll('[data-i18n]').forEach(function(e){
-    var k=e.getAttribute('data-i18n'), svg=e.querySelector('svg');
-    e.innerHTML=t[k]; if(svg){e.append(' ');e.appendChild(svg);}
+    var k=e.getAttribute('data-i18n');
+    e.innerHTML=t[k];
   });
 })();
 </script>
