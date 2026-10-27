@@ -1,30 +1,30 @@
 # Placeholder | Zimin.Dev
 
-Сторінка-заглушка з лого Zimin.Dev для субдоменів, на яких згодом з'являються презентації проєктів для клієнтів (site1–site9.zimin.dev). Статичний HTML без залежностей і без запитів до сторонніх сервісів.
+A placeholder page with the Zimin.Dev logo for subdomains that will later host client project presentations (site1–site9.zimin.dev). Static HTML with no dependencies and no third-party requests.
 
 ![Desktop](screenshots/desktop.png)
 
-<p><img src="screenshots/mobile.png" width="300" alt="Mobile"> <img src="screenshots/desktop-uk.png" width="520" alt="Українською"></p>
+<p><img src="screenshots/mobile.png" width="300" alt="Mobile"> <img src="screenshots/desktop-uk.png" width="520" alt="Ukrainian"></p>
 
-- Темний дизайн у кольорах zimin.dev (#111111, #7d3ed0), лого з легкою анімацією, кнопка **zimin.dev**.
-- У плашці під лого автоматично показується адреса, на якій відкрита сторінка (`site3.zimin.dev` тощо), тому один файл підходить для всіх субдоменів.
-- Текст англійською. За мовою браузера він сам перемикається на українську, німецьку, польську, французьку чи російську.
-- Шрифти Manrope і Plus Jakarta Sans лежать разом зі сторінкою.
-- Сторінку закрито від індексації: `robots.txt`, `<meta name="robots">`, заголовок `X-Robots-Tag` у `.htaccess`.
-- `.htaccess` має `RewriteEngine On`, щоб правила WordPress із батьківської теки (`/home/<user>/.htaccess`) не успадковувались і не давали помилку 500. Також вимикає перелік файлів і задає `index.html`.
+- Dark design in the zimin.dev colours (#111111, #7d3ed0), a softly animated logo and a **zimin.dev** button.
+- The pill under the logo shows the current hostname (`site3.zimin.dev` etc.), so one file fits every subdomain.
+- The text is in English and switches to Ukrainian, German, Polish, French or Russian based on the browser language.
+- The Manrope and Plus Jakarta Sans fonts are bundled with the page.
+- Hidden from search engines: `robots.txt`, `<meta name="robots">` and an `X-Robots-Tag` header in `.htaccess`.
+- `.htaccess` sets `RewriteEngine On`, so WordPress rules from a parent folder (`/home/<user>/.htaccess`) are not inherited and don't cause a 500 error. It also turns off directory listing and sets `index.html` as the index.
 
-## Встановлення
+## Installation
 
-Скопіюйте `index.html`, `robots.txt`, `.htaccess` і теку `assets/` у корінь сайту (або розпакуйте zip із Release).
+Copy `index.html`, `robots.txt`, `.htaccess` and the `assets/` folder to the site root (or unzip the archive from the Release).
 
 ```sh
 scp -r index.html robots.txt .htaccess assets user@server:/home/user/subdomains/site1.example.com/
 ```
 
-## Версії
+## Changelog
 
-- **1.0.1** — на кнопці текст «zimin.dev» (усіма мовами), підпис у футері прибрано.
-- **1.0.0** — перша версія.
+- **1.0.1**: the button text is now «zimin.dev» in every language, and the footer credit was removed.
+- **1.0.0**: first release.
 
 ---
 
