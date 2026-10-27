@@ -1,0 +1,5 @@
+# Own rules stop /home/bestwebm/.htaccess (WordPress) from being inherited
+RewriteEngine On
+DirectoryIndex index.html
+Options -Indexes
+Header set X-Robots-Tag "noindex, nofollow"
